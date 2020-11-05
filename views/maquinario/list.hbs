@@ -1,0 +1,31 @@
+<h3><a class="btn btn-secondary" href="/maquinario"><i class="fa fa-plus"></i>Inclua mais um</a></h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Nome</th>
+            <th>Modelo</th>
+            <th>Descricao</th>
+            <th>Id do Responsavel</th>
+            <th>Status</th>
+            <th>         
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+          <td>{{this.image}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.modelo}}</td>
+          <td>{{this.desciption}}</td>
+          <td>{{this.responsableId}}</td>
+          <td>{{this.status}}</td>
+          <td>
+            <a href="/maquinario/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+            <a href="/maquinario/delete/{{this._id}}" onclick="return confirm('Tem certeza que quer DELETAR essa maquina?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+          </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
